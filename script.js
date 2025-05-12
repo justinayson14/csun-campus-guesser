@@ -220,7 +220,7 @@ function handleMapClick(e) {
 
   if (triviaContainer) {
     const answerClass = isCorrect ? "answer-correct" : "answer-incorrect";
-    triviaContainer.innerHTML = `<p class='${answerClass}'>${checkerMsg}</p>`;
+    triviaContainer.innerHTML += `<p class='${answerClass}'>${checkerMsg}</p>`;
   }
 
   // Add buffer between questions
