@@ -1,0 +1,52 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+  /** Generated colors from colorffy.com */
+  /** Base colors*/
+  --clr-dark-a0: #000000;
+  --clr-light-a0: #ffffff;
+
+  /** Theme primary colors */
+  --clr-primary-a0: #83f0f2;
+  --clr-primary-a10: #94f2f3;
+  --clr-primary-a20: #a3f4f5;
+  --clr-primary-a30: #b2f6f6;
+  --clr-primary-a40: #c0f7f8;
+  --clr-primary-a50: #cdf9f9;
+
+  /** Theme surface colors */
+  --clr-surface-a0: #121212;
+  --clr-surface-a10: #282828;
+  --clr-surface-a20: #3f3f3f;
+  --clr-surface-a30: #575757;
+  --clr-surface-a40: #717171;
+  --clr-surface-a50: #8b8b8b;
+
+  box-sizing: border-box;
+  color: var(--clr-light-a0);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+}
+
+main {
+  background-color: var(--clr-dark-a0);
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.location-container {
+    border: var(--clr-primary-a30) 2px dotted;
+    flex-grow: 1;
+}
+
+.map-container {
+    border: var(--clr-primary-a0) 2px dotted; 
+    flex-grow: 2;
+}
