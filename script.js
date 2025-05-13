@@ -1,7 +1,7 @@
 let map; // Google Map Object
 let locationsArr = []; // Array for Location objects
 let selLocsForRound = []; // Locations to be asked for current round
-const questionsPerRound = 3; // Limit for questions to generate per round
+const questionsPerRound = 5; // Limit for questions to generate per round
 let isTakingClicks = false; // Prevent registering multiple clicks in one question
 let score = 0;
 let currIndex = 0; // Currently selected index for question
@@ -77,6 +77,72 @@ function initLocs() {
       -118.530139,
       34.239908,
       -118.531412
+    )
+  );
+
+  // Create SRC Bounds
+  locationsArr.push(
+    new Location(
+      "Student Recreation Center",
+      34.240597,
+      -118.524709,
+      34.239335,
+      -118.525199,
+    )
+  );
+
+  // Create Eucalyptus Hall
+  locationsArr.push(
+    new Location(
+      "Eucalyptus Hall",
+      34.23875989834445,
+      -118.52880318043472,
+      34.2385526335265,
+      -118.52763228868402
+    )
+  );
+
+  // Create Live Oak Hall
+  locationsArr.push(
+    new Location(
+      "Live Oak Hall",
+      34.238370424083506,
+      -118.52763030584282,
+      34.2381708662376,
+      -118.5288108035998,
+    )
+  );
+
+  // Create Sierra Quad
+  locationsArr.push(
+    new Location(
+      "Sierra Quad",
+      34.2391163313056,
+      -118.52894548833264,
+      34.23791339777363,
+      -118.52966566146516,
+    )
+  );
+
+  // Create Campus Store Complex
+  locationsArr.push(
+    new Location(
+      "Campus Store Complex",
+      34.23776600644081,
+      -118.52762012292402,
+      34.23700764924485,
+      -118.52875335624783,
+    )
+  );
+
+  // Create Chaparral Hall
+  locationsArr.push(
+    new Location(
+      "Chaparral Hall",
+      34.23857186500327,
+      -118.52669628674079,
+      34.237900608779945,
+      -118.52727368450748,
     )
   );
 }

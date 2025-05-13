@@ -115,3 +115,9 @@ main {
   height: 100%;
   width: 100%;
 }
+
+/* Other */
+#try-again-btn {
+  height: 30px;
+  text-align: center;
+}
