@@ -29,8 +29,8 @@
   --clr-surface-a50: #8b8b8b;
 
   /* Answers colors */
-  --correct-green: #4CAF50;
-  --incorrect-red: #F44336;
+  --correct-green: #4caf50;
+  --incorrect-red: #f44336;
 
   box-sizing: border-box;
   color: var(--clr-light-a0);
@@ -69,15 +69,24 @@ main {
   margin-bottom: 20px;
 }
 
+.high-score-container {
+  background-color: var(--clr-surface-a10);
+  padding: 15px;
+  border-radius: 8px;
+  min-height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
 .trivia-container {
   background-color: var(--clr-surface-a10);
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
-  width: 90%;
+  width: 100%;
   min-height: 50px;
   font-size: 1.1em;
-  text-align: left;
 }
 
 .trivia-container p {

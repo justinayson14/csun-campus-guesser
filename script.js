@@ -6,10 +6,12 @@ let isTakingClicks = false; // Prevent registering multiple clicks in one questi
 let score = 0;
 let currIndex = 0; // Currently selected index for question
 let rectangleAnswer = null; // Rectangle to show answer
+let highScore = 0;
 
 // HTML Elements
 let tryBtn;
 let triviaContainer;
+let highScoreContainer;
 
 // Google Maps API Objects
 let GoogleMaps_Map;
@@ -87,7 +89,7 @@ function initLocs() {
       34.240597,
       -118.524709,
       34.239335,
-      -118.525199,
+      -118.525199
     )
   );
 
@@ -96,9 +98,9 @@ function initLocs() {
     new Location(
       "Eucalyptus Hall",
       34.23875989834445,
-      -118.52880318043472,
+      -118.52763228868402,
       34.2385526335265,
-      -118.52763228868402
+      -118.52880318043472
     )
   );
 
@@ -109,7 +111,7 @@ function initLocs() {
       34.238370424083506,
       -118.52763030584282,
       34.2381708662376,
-      -118.5288108035998,
+      -118.5288108035998
     )
   );
 
@@ -120,7 +122,7 @@ function initLocs() {
       34.2391163313056,
       -118.52894548833264,
       34.23791339777363,
-      -118.52966566146516,
+      -118.52966566146516
     )
   );
 
@@ -131,7 +133,7 @@ function initLocs() {
       34.23776600644081,
       -118.52762012292402,
       34.23700764924485,
-      -118.52875335624783,
+      -118.52875335624783
     )
   );
 
@@ -142,7 +144,7 @@ function initLocs() {
       34.23857186500327,
       -118.52669628674079,
       34.237900608779945,
-      -118.52727368450748,
+      -118.52727368450748
     )
   );
 }
@@ -223,6 +225,12 @@ function endRound() {
     triviaContainer.innerHTML += `<p>Your score is ${score}/${questionsPerRound}</p>`;
   }
   tryBtn.style.display = "block";
+
+  // Check if user beat their high score
+  if (score > highScore) {
+    highScore = score;
+    highScoreContainer.textContent = `Score to beat: ${highScore}`;
+  }
 }
 
 function askQuestion() {
@@ -293,16 +301,19 @@ function handleMapClick(e) {
   setTimeout(() => {
     currIndex++;
     askQuestion();
-  }, 2500);
+  }, 1500);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   // Connect to HTML DOM
   tryBtn = document.getElementById("try-again-btn");
   triviaContainer = document.querySelector(".trivia-container");
+  highScoreContainer = document.querySelector(".high-score-container");
 
+  // Handle Try Again button click
   tryBtn.addEventListener("click", startRound);
 
+  // Initialize locations for questions
   initLocs();
 
   (async () => {
